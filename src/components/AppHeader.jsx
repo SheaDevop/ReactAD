@@ -17,6 +17,9 @@ const AppHeader = () => {
         {/* AppBar logo */}
         <Box component='img' sx={styles.appLogo} src='/src/assets/react.svg'/>
 
+        {/* Spacer */}
+        <Box sx={{flexGrow: 1}} />
+
         {/* Notifications icon */}
         <IconButton title='Notifications' color='secondary'>
           <Badge badgeContent={13} color="error">
