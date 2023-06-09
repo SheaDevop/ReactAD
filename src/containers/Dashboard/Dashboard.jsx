@@ -1,11 +1,12 @@
 import { Box, Typography } from "@mui/material";
+import LatestVideoCard from "../../components/LatestVideoCard";
 
 const Dashboard = () => {
   return (
     <Box>
       <Typography sx={styles.pageTitle} variant="h5">Channel Dashboard</Typography>
       <Box sx={styles.columnContainer}>
-
+        <LatestVideoCard />
       </Box>
     </Box>
   )
