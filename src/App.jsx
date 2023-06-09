@@ -9,6 +9,8 @@ import theme from './config/theme';
 import SideNav from "./components/SideNav";
 import AppHeader from "./components/AppHeader";
 import { ProSidebarProvider } from "react-pro-sidebar";
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./router/AppRoutes";
 
 function App() {
   return (
@@ -18,9 +20,12 @@ function App() {
           <CssBaseline />
           <AppHeader />
           <Box sx={styles.container}>
-            <SideNav />
-            <Box component={'main'} sx={styles.mainSection}>
-            </Box>
+            <BrowserRouter>
+              <SideNav />
+              <Box component={'main'} sx={styles.mainSection}>
+                <AppRoutes/>
+              </Box>
+            </BrowserRouter>
           </Box>
         </ProSidebarProvider>
       </ThemeProvider>
