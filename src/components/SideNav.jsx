@@ -5,11 +5,13 @@ import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const SideNav = () => {
 
   const { collapsed } = useProSidebar();
+
+  const location = useLocation();
 
   const theme = useTheme();
 
@@ -29,16 +31,16 @@ const SideNav = () => {
       </Box>
       <Menu>
         {/* Menu items */}
-        <MenuItem active component={<Link to={'/'} />} icon={<DashboardOutlinedIcon/>}>
+        <MenuItem active={location.pathname === '/'} component={<Link to={'/'} />} icon={<DashboardOutlinedIcon/>}>
           <Typography variant='body2'>DashBoard</Typography>
         </MenuItem>
-        <MenuItem active component={<Link to={'/content'} />} icon={<SourceOutlinedIcon/>}>
+        <MenuItem active={location.pathname === '/content'} component={<Link to={'/content'} />} icon={<SourceOutlinedIcon/>}>
           <Typography variant='body2'>Content</Typography>
         </MenuItem>
-        <MenuItem active component={<Link to={'/analytics'} />} icon={<AnalyticsOutlinedIcon/>}>
+        <MenuItem active={location.pathname === '/analytics'} component={<Link to={'/analytics'} />} icon={<AnalyticsOutlinedIcon/>}>
           <Typography variant='body2'>Analytics</Typography>
         </MenuItem>
-        <MenuItem active component={<Link to={'/customization'} />} icon={<StyleOutlinedIcon/>}>
+        <MenuItem active={location.pathname === '/customization'} component={<Link to={'/customization'} />} icon={<StyleOutlinedIcon/>}>
           <Typography variant='body2'>Customization</Typography>
         </MenuItem>
       </Menu>
