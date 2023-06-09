@@ -1,6 +1,6 @@
 import { Avatar, Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
-import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
+import { Menu, MenuItem, Sidebar, useProSidebar } from 'react-pro-sidebar';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import StyleOutlinedIcon from '@mui/icons-material/StyleOutlined';
 import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
@@ -8,7 +8,10 @@ import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
 
 const SideNav = () => {
 
+  const { collapsed } = useProSidebar();
+
   const theme = useTheme();
+
   return (
     <Sidebar
       style={{
@@ -20,8 +23,8 @@ const SideNav = () => {
     >
       <Box sx={styles.avatarContainer}>
         <Avatar sx={styles.avatar} alt="User Name" src="/src/assets/react.svg" />
-        <Typography variant='body2' sx={styles.yourChannel}>Your Channel</Typography>
-        <Typography variant='overline'>Channel Name</Typography>
+        {!collapsed ? <Typography variant='body2' sx={styles.yourChannel}>Your Channel</Typography> : null}
+        {!collapsed ? <Typography variant='overline'>Channel Name</Typography> : null}
       </Box>
       <Menu>
         {/* Menu items */}
