@@ -1,8 +1,8 @@
 import { Box, Card, CardContent, Typography } from "@mui/material";
 
-const LatestVideoCard = () => {
+const LatestVideoCard = (props) => {
   return (
-    <Card>
+    <Card {...props}>
       <CardContent>
         <Typography variant="cardTitle">Latest Video Performance</Typography>
         <Box sx={styles.latestVideoContainer}>
