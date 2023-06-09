@@ -21,7 +21,7 @@ const SideNav = () => {
           <Typography variant='body2'>Analytics</Typography>
         </MenuItem>
         <MenuItem active icon={<StyleOutlinedIcon/>}>
-          <Typography variant='body2'>Analytics</Typography>
+          <Typography variant='body2'>Customization</Typography>
         </MenuItem>
       </Menu>
     </Sidebar>
