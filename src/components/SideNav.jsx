@@ -29,7 +29,7 @@ const SideNav = () => {
         {!collapsed ? <Typography variant='body2' sx={styles.yourChannel}>Your Channel</Typography> : null}
         {!collapsed ? <Typography variant='overline'>Channel Name</Typography> : null}
       </Box>
-      <Menu>
+      <Menu menuItemStyles={{ button: ({active}) => {return {backgroundColor: active? theme.palette.neutral.medium : undefined}}}}>
         {/* Menu items */}
         <MenuItem active={location.pathname === '/'} component={<Link to={'/'} />} icon={<DashboardOutlinedIcon/>}>
           <Typography variant='body2'>DashBoard</Typography>
