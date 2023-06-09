@@ -11,16 +11,16 @@ const SideNav = () => {
     <Sidebar>
       <Menu>
         {/* Menu items */}
-        <MenuItem active icon={DashboardOutlinedIcon}>
+        <MenuItem active icon={<DashboardOutlinedIcon/>}>
           <Typography variant='body2'>DashBoard</Typography>
         </MenuItem>
-        <MenuItem active icon={SourceOutlinedIcon}>
+        <MenuItem active icon={<SourceOutlinedIcon/>}>
           <Typography variant='body2'>Content</Typography>
         </MenuItem>
-        <MenuItem active icon={AnalyticsOutlinedIcon}>
+        <MenuItem active icon={<AnalyticsOutlinedIcon/>}>
           <Typography variant='body2'>Analytics</Typography>
         </MenuItem>
-        <MenuItem active icon={StyleOutlinedIcon}>
+        <MenuItem active icon={<StyleOutlinedIcon/>}>
           <Typography variant='body2'>Analytics</Typography>
         </MenuItem>
       </Menu>
