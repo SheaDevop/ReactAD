@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Avatar, Box, Typography, useTheme } from '@mui/material';
 import React from 'react';
 import { Menu, MenuItem, Sidebar } from 'react-pro-sidebar';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
@@ -7,8 +7,22 @@ import SourceOutlinedIcon from '@mui/icons-material/SourceOutlined';
 import AnalyticsOutlinedIcon from '@mui/icons-material/AnalyticsOutlined';
 
 const SideNav = () => {
+
+  const theme = useTheme();
   return (
-    <Sidebar>
+    <Sidebar
+      style={{
+        height: '100%',
+        top: 'auto',
+      }}
+      breakPoint='md'
+      backgroundColor={theme.palette.neutral.light}
+    >
+      <Box sx={styles.avatarContainer}>
+        <Avatar sx={styles.avatar} alt="User Name" src="/src/assets/react.svg" />
+        <Typography variant='body2' sx={styles.yourChannel}>Your Channel</Typography>
+        <Typography variant='overline'>Channel Name</Typography>
+      </Box>
       <Menu>
         {/* Menu items */}
         <MenuItem active icon={<DashboardOutlinedIcon/>}>
@@ -26,6 +40,23 @@ const SideNav = () => {
       </Menu>
     </Sidebar>
   )
+}
+
+/** @type {import("@mui/material").SxProps} */
+const styles = {
+  avatarContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    my: 5
+  },
+  avatar: {
+    width: '40%',
+    height: 'auto'
+  },
+  yourChannel: {
+    mt: 1
+  }
 }
 
 export default SideNav;
