@@ -36,6 +36,21 @@ const OverviewChart = () => {
           <Line options={mainChartOptions} data={getMainChartData()} />
         </Box>
       </TabPanel>
+      <TabPanel value={value} index={1} mt={0}>
+        <Box sx={styles.mainChart}>
+          <Line options={mainChartOptions} data={getMainChartData()} />
+        </Box>
+      </TabPanel>
+      <TabPanel value={value} index={2} mt={0}>
+        <Box sx={styles.mainChart}>
+          <Line options={mainChartOptions} data={getMainChartData()} />
+        </Box>
+      </TabPanel>
+      <TabPanel value={value} index={3} mt={0}>
+        <Box sx={styles.mainChart}>
+          <Line options={mainChartOptions} data={getMainChartData()} />
+        </Box>
+      </TabPanel>
     </Box>
   )
 }
