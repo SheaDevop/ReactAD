@@ -72,10 +72,10 @@ const days = ['Jan 19, 2023', 'Jan 20, 2023', 'Jan 21, 2023', 'Jan 22, 2023', 'J
 export const getMainChartData = () => {
   return {
     labels: days,
-    dataset: [
+    datasets: [
       {
         label: 'Value',
-        data: days.map(() => faker.datatype.number.int({min: 600, max: 1000})),
+        data: days.map(() => faker.number.int({ min: 600, max: 1000 })),
         backgroundColor: 'rgba(161, 207, 237, 0.5)',
         animation: false
       }

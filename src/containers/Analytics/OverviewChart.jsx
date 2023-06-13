@@ -4,7 +4,7 @@ import AnalyticsTabHead from "./AnalyticsTabHead";
 import { ArrowDropDownCircleSharp, CheckCircle } from "@mui/icons-material";
 import TabPanel from "../../components/TabPanel";
 import { Line } from "react-chartjs-2";
-import { mainChartOptions } from "./config/ChartConfigs";
+import { getMainChartData, mainChartOptions } from "./config/ChartConfigs";
 
 const ViewsTabHead = forwardRef((props, ref) => <AnalyticsTabHead {...props} title='Views' icon={<ArrowDropDownCircleSharp color="red"/>} value='21.4k' subtitle={'700 less than usual'} />);
 
@@ -24,7 +24,7 @@ const OverviewChart = () => {
   }
 
   return (
-    <Box sx={StyleSheet.container}>
+    <Box sx={styles.container}>
       <Tabs value={value} onChange={handleChange}>
         <Tab component={ViewsTabHead} id="tab-0"/>
         <Tab component={WatchTimeTabHead} id="tab-1"/>
@@ -33,7 +33,7 @@ const OverviewChart = () => {
       </Tabs>
       <TabPanel value={value} index={0} mt={0}>
         <Box sx={styles.mainChart}>
-          <Line options={mainChartOptions} data={getMainChartData()}
+          <Line options={mainChartOptions} data={getMainChartData()} />
         </Box>
       </TabPanel>
     </Box>
@@ -42,9 +42,18 @@ const OverviewChart = () => {
 
 /** @type {import("@mui/material").SxProps} */
 const styles = {
-  pageTitle: {
-    mb: 2
-  }  
+  container: {
+    mt: 4,
+    width: '100%'
+  },
+  mainChart: {
+    height: 250,
+    border: 1,
+    borderColor: 'neutral.medium',
+    pt: 4,
+    borderTop: 'none',
+    borderRadius: 1
+  }
 }
 
 export default OverviewChart;
