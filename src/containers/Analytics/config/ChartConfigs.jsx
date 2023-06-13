@@ -82,3 +82,46 @@ export const getMainChartData = () => {
     ]
   }
 }
+
+const realtimeChartLabels = ["-48h", "-47h", "-46h", "-45h", "-44h", "-43h", "-42h", "-41h", "-40h", "-39h", "-38h", "-37h", "-36h", "-35h", "-34h", "-33h", "-32h", "-31h", "-30h", "-29h", "-28h", "-27h", "-26h", "-25h", "-24h", "-23h", "-22h", "-21h", "-20h", "-19h", "-18h", "-17h", "-16h", "-15h", "-14h", "-13h", "-12h", "-11h", "-10h", "-9h", "-8h", "-7h", "-6h", "-5h", "-4h", "-3h", "-2h", "-1h", "Now"];
+
+export const realtimeChartData = {
+  labels: realtimeChartLabels,
+  datasets: [
+    {
+      label: 'Views',
+      data: realtimeChartLabels.map(() => faker.number.int({min: 30, max: 90})),
+      backgroundColor: 'rbg(95, 158, 199)'
+    }
+  ]
+}
+
+export const realtimeChartOptions = {
+  labels: realtimeChartLabels,
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    legend: {
+      display: false
+    },
+    title: {
+      display: false
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      display: false
+    },
+    x: {
+      grid: {
+        display: false
+      },
+      ticks: {
+        callback: (label, index) => (index === 0 || index === 47) ? realtimeChartLabels[index] : null,
+        autoSkip: false,
+        align: 'inner'
+      }
+    }
+  }
+}
