@@ -57,7 +57,22 @@ const Analytics = () => {
 const styles = {
   pageTitle: {
     mb: 2
-  }  
+  },
+  overviewContainer: {
+    display: 'grid',
+    gridTemplateColumns: {'md': '1fr', 'lg': '1fr 300px'},
+    gap: 2,
+    justifyContent: 'center'
+  },
+  statsContainer: {
+    bgcolor: 'neutral.light',
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+  divider: {
+    my: 4
+  }
 }
 
 export default Analytics;
