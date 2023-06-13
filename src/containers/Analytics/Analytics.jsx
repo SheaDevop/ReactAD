@@ -41,13 +41,13 @@ const Analytics = () => {
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Typography>Test2</Typography>
+        <TopVideosList />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Typography>Test3</Typography>
+        <Typography>No audience analytics availible at the moment</Typography>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Typography>Test4</Typography>
+        <Typography>No revenue analytics availible at the moment</Typography>
       </TabPanel>
     </Box>
   )
