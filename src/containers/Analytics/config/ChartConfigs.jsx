@@ -118,7 +118,7 @@ export const realtimeChartOptions = {
         display: false
       },
       ticks: {
-        callback: (label, index) => (index === 0 || index === 47) ? realtimeChartLabels[index] : null,
+        callback: (label, index) => (index === 0 || index === 48) ? realtimeChartLabels[index] : null,
         autoSkip: false,
         align: 'inner'
       }
